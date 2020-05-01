@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "untable",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Create an object from a string table of keys and values.",
+	"repository": "https://github.com/Richienb/untable.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,8 +17,19 @@
 		"lint": "xo",
 		"test": "xo && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"table",
+		"parse",
+		"object",
+		"plain",
+		"type",
+		"string"
+	],
+	"dependencies": {
+		"@sindresorhus/is": "^2.1.1",
+		"fromentries": "^1.2.0",
+		"inside-string": "^1.0.1"
+	},
 	"devDependencies": {
 		"ava": "^3.8.1",
 		"eslint-config-richienb": "^0.4.2",

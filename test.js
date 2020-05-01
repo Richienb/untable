@@ -1,13 +1,18 @@
 const test = require("ava")
-const theModule = require(".")
+const untable = require(".")
 
 test("main", t => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number"
+	t.deepEqual(untable(`
+Availability                : 3
+Caption                     : Internal Battery
+Chemistry                   : 6
+PowerManagementCapabilities : {1}
+PowerManagementSupported    : False
+`, { allowNumbers: true, allowBooleans: true, allowArrays: true }), {
+		Availability: 3,
+		Caption: "Internal Battery",
+		Chemistry: 6,
+		PowerManagementCapabilities: [1],
+		PowerManagementSupported: false
 	})
-
-	t.is(theModule("unicorns"), "unicorns & rainbows")
 })
